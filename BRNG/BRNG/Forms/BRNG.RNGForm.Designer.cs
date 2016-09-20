@@ -34,10 +34,11 @@
             // 
             // BRNGPicture
             // 
-            this.BRNGPicture.BackgroundImage = global::BRNG.Properties.Resources.rand;
-            this.BRNGPicture.Location = new System.Drawing.Point(556, 382);
+            this.BRNGPicture.BackgroundImage = global::BRNG.Properties.Resources.cloud;
+            this.BRNGPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BRNGPicture.Location = new System.Drawing.Point(269, 167);
             this.BRNGPicture.Name = "BRNGPicture";
-            this.BRNGPicture.Size = new System.Drawing.Size(100, 122);
+            this.BRNGPicture.Size = new System.Drawing.Size(128, 54);
             this.BRNGPicture.TabIndex = 0;
             this.BRNGPicture.TabStop = false;
             this.BRNGPicture.Click += new System.EventHandler(this.BRNGPicture_Click);

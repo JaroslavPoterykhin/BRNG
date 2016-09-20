@@ -34,7 +34,7 @@
             this.fAQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newBRNGButton = new System.Windows.Forms.Button();
             this.lookAtGeneratedNumberButton = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.mainRichTextBox = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,21 +87,20 @@
             this.lookAtGeneratedNumberButton.Text = "Look At Numbers";
             this.lookAtGeneratedNumberButton.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // mainRichTextBox
             // 
-            this.button3.Location = new System.Drawing.Point(166, 245);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 24);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.mainRichTextBox.Location = new System.Drawing.Point(94, 273);
+            this.mainRichTextBox.Name = "mainRichTextBox";
+            this.mainRichTextBox.Size = new System.Drawing.Size(228, 84);
+            this.mainRichTextBox.TabIndex = 3;
+            this.mainRichTextBox.Text = "";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 466);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.mainRichTextBox);
             this.Controls.Add(this.lookAtGeneratedNumberButton);
             this.Controls.Add(this.newBRNGButton);
             this.Controls.Add(this.menuStrip1);
@@ -123,7 +122,7 @@
         private System.Windows.Forms.ToolStripMenuItem fAQToolStripMenuItem;
         private System.Windows.Forms.Button newBRNGButton;
         private System.Windows.Forms.Button lookAtGeneratedNumberButton;
-        private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.RichTextBox mainRichTextBox;
     }
 }
 

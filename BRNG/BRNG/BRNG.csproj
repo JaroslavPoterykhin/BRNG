@@ -46,24 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BRNG.MainForm.cs">
+    <Compile Include="Engine\BRNGEntropyGenerator.cs" />
+    <Compile Include="Engine\BRNGRandomPointGeneratorEngine.cs" />
+    <Compile Include="Forms\BRNG.MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BRNG.MainForm.Designer.cs">
+    <Compile Include="Forms\BRNG.MainForm.Designer.cs">
       <DependentUpon>BRNG.MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BRNG.RNGForm.cs">
+    <Compile Include="Forms\BRNG.RNGForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BRNG.RNGForm.Designer.cs">
+    <Compile Include="Forms\BRNG.RNGForm.Designer.cs">
       <DependentUpon>BRNG.RNGForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BRNG.MainForm.resx">
+    <EmbeddedResource Include="Forms\BRNG.MainForm.resx">
       <DependentUpon>BRNG.MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BRNG.RNGForm.resx">
+    <EmbeddedResource Include="Forms\BRNG.RNGForm.resx">
       <DependentUpon>BRNG.RNGForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -100,6 +102,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
