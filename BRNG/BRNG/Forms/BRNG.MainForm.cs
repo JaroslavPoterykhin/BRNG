@@ -30,5 +30,12 @@ namespace BRNG
             BRNG.Forms.BRNGKeyForm numberGeneratorByKeys = new Forms.BRNGKeyForm(this);
             numberGeneratorByKeys.Show();
         }
+
+        private void ThirdButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BRNG.Forms.BRNGMOUSEForm numberGeneratorByMouse = new Forms.BRNGMOUSEForm(this);
+            numberGeneratorByMouse.Show();
+        }
     }
 }

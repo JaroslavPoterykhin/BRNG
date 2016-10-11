@@ -35,6 +35,7 @@
             this.newBRNGButton = new System.Windows.Forms.Button();
             this.lookAtGeneratedNumberButton = new System.Windows.Forms.Button();
             this.mainRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.ThirdButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,11 +97,22 @@
             this.mainRichTextBox.TabIndex = 3;
             this.mainRichTextBox.Text = "";
             // 
+            // ThirdButton
+            // 
+            this.ThirdButton.Location = new System.Drawing.Point(138, 235);
+            this.ThirdButton.Name = "ThirdButton";
+            this.ThirdButton.Size = new System.Drawing.Size(137, 23);
+            this.ThirdButton.TabIndex = 4;
+            this.ThirdButton.Text = "ThirdOfType";
+            this.ThirdButton.UseVisualStyleBackColor = true;
+            this.ThirdButton.Click += new System.EventHandler(this.ThirdButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 466);
+            this.Controls.Add(this.ThirdButton);
             this.Controls.Add(this.mainRichTextBox);
             this.Controls.Add(this.lookAtGeneratedNumberButton);
             this.Controls.Add(this.newBRNGButton);
@@ -124,6 +136,7 @@
         private System.Windows.Forms.Button newBRNGButton;
         private System.Windows.Forms.Button lookAtGeneratedNumberButton;
         public System.Windows.Forms.RichTextBox mainRichTextBox;
+        private System.Windows.Forms.Button ThirdButton;
     }
 }
 
