@@ -37,5 +37,10 @@ namespace BRNG
             BRNG.Forms.BRNGMOUSEForm numberGeneratorByMouse = new Forms.BRNGMOUSEForm(this);
             numberGeneratorByMouse.Show();
         }
+
+        private void howToUseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("sd", "sad", MessageBoxButtons.OK ,  MessageBoxIcon.Question);
+        }
     }
 }

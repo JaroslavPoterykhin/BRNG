@@ -48,7 +48,6 @@ namespace BRNG
             else
             {
                 this.Close();
-
                 previousForm.Show();
             }
         }

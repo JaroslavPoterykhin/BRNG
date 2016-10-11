@@ -46,7 +46,6 @@
             // BRNGMouseFormProgressBar
             // 
             this.BRNGMouseFormProgressBar.Location = new System.Drawing.Point(29, 597);
-            this.BRNGMouseFormProgressBar.MarqueeAnimationSpeed = 10;
             this.BRNGMouseFormProgressBar.Maximum = 10;
             this.BRNGMouseFormProgressBar.Name = "BRNGMouseFormProgressBar";
             this.BRNGMouseFormProgressBar.RightToLeftLayout = true;

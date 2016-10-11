@@ -37,15 +37,15 @@
             this.keyFormLabel.Font = new System.Drawing.Font("Times New Roman", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.keyFormLabel.Location = new System.Drawing.Point(324, 201);
             this.keyFormLabel.Name = "keyFormLabel";
-            this.keyFormLabel.Size = new System.Drawing.Size(44, 61);
+            this.keyFormLabel.Size = new System.Drawing.Size(56, 61);
             this.keyFormLabel.TabIndex = 0;
-            Engine.RandomPointGeneratorEngine randChar = new Engine.RandomPointGeneratorEngine();
-            this.keyFormLabel.Text = randChar.GenerateNewChar().ToString();
+            this.keyFormLabel.Text = "S";
             // 
             // BRNGKeyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(720, 546);
             this.Controls.Add(this.keyFormLabel);
             this.Name = "BRNGKeyForm";

@@ -36,6 +36,7 @@
             this.lookAtGeneratedNumberButton = new System.Windows.Forms.Button();
             this.mainRichTextBox = new System.Windows.Forms.RichTextBox();
             this.ThirdButton = new System.Windows.Forms.Button();
+            this.howToUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,52 +66,62 @@
             // 
             // fAQToolStripMenuItem
             // 
+            this.fAQToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.howToUseToolStripMenuItem});
             this.fAQToolStripMenuItem.Name = "fAQToolStripMenuItem";
             this.fAQToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.fAQToolStripMenuItem.Text = "F.A.Q";
             // 
             // newBRNGButton
             // 
-            this.newBRNGButton.Location = new System.Drawing.Point(138, 158);
+            this.newBRNGButton.Location = new System.Drawing.Point(35, 57);
             this.newBRNGButton.Name = "newBRNGButton";
             this.newBRNGButton.Size = new System.Drawing.Size(137, 24);
             this.newBRNGButton.TabIndex = 1;
-            this.newBRNGButton.Text = "New random numbers";
+            this.newBRNGButton.Text = "Generate by Button";
             this.newBRNGButton.UseVisualStyleBackColor = true;
             this.newBRNGButton.Click += new System.EventHandler(this.newBRNGButton_Click);
             // 
             // lookAtGeneratedNumberButton
             // 
-            this.lookAtGeneratedNumberButton.Location = new System.Drawing.Point(138, 203);
+            this.lookAtGeneratedNumberButton.Location = new System.Drawing.Point(242, 57);
             this.lookAtGeneratedNumberButton.Name = "lookAtGeneratedNumberButton";
             this.lookAtGeneratedNumberButton.Size = new System.Drawing.Size(137, 25);
             this.lookAtGeneratedNumberButton.TabIndex = 2;
-            this.lookAtGeneratedNumberButton.Text = "Look At Numbers";
+            this.lookAtGeneratedNumberButton.Text = "Generate by Letters";
             this.lookAtGeneratedNumberButton.UseVisualStyleBackColor = true;
             this.lookAtGeneratedNumberButton.Click += new System.EventHandler(this.lookAtGeneratedNumberButton_Click);
             // 
             // mainRichTextBox
             // 
-            this.mainRichTextBox.Location = new System.Drawing.Point(94, 273);
+            this.mainRichTextBox.Location = new System.Drawing.Point(51, 229);
             this.mainRichTextBox.Name = "mainRichTextBox";
-            this.mainRichTextBox.Size = new System.Drawing.Size(228, 84);
+            this.mainRichTextBox.Size = new System.Drawing.Size(328, 197);
             this.mainRichTextBox.TabIndex = 3;
             this.mainRichTextBox.Text = "";
             // 
             // ThirdButton
             // 
-            this.ThirdButton.Location = new System.Drawing.Point(138, 235);
+            this.ThirdButton.Location = new System.Drawing.Point(135, 143);
             this.ThirdButton.Name = "ThirdButton";
             this.ThirdButton.Size = new System.Drawing.Size(137, 23);
             this.ThirdButton.TabIndex = 4;
-            this.ThirdButton.Text = "ThirdOfType";
+            this.ThirdButton.Text = "Generate by Mouse";
             this.ThirdButton.UseVisualStyleBackColor = true;
             this.ThirdButton.Click += new System.EventHandler(this.ThirdButton_Click);
+            // 
+            // howToUseToolStripMenuItem
+            // 
+            this.howToUseToolStripMenuItem.Name = "howToUseToolStripMenuItem";
+            this.howToUseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.howToUseToolStripMenuItem.Text = "How to use";
+            this.howToUseToolStripMenuItem.Click += new System.EventHandler(this.howToUseToolStripMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(409, 466);
             this.Controls.Add(this.ThirdButton);
             this.Controls.Add(this.mainRichTextBox);
@@ -137,6 +148,7 @@
         private System.Windows.Forms.Button lookAtGeneratedNumberButton;
         public System.Windows.Forms.RichTextBox mainRichTextBox;
         private System.Windows.Forms.Button ThirdButton;
+        private System.Windows.Forms.ToolStripMenuItem howToUseToolStripMenuItem;
     }
 }
 

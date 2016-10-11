@@ -29,26 +29,18 @@ namespace BRNG.Forms
             if (controler.Elapsed.TotalSeconds > 1)
             {
                 controler.Reset();
-                counter++;  
+                counter++;
                 int cursorX = Cursor.Position.X;
                 int cursorY = Cursor.Position.Y;
-                previusForm.mainRichTextBox.AppendText((cursorX*cursorY).ToString()+ "  ");
+                previusForm.mainRichTextBox.AppendText((cursorX * cursorY).ToString() + "  ");
                 controler.Start();
                 BRNGMouseFormProgressBar.Value = counter;
             }
-            if (counter >9)
+            if (counter > 9)
             {
                 this.Close();
                 previusForm.Show();
             }
         }
-
-        //private void mouseFormPictureBox_MouseHover(object sender, EventArgs e)
-        //{
-        //    int cursorX = Cursor.Position.X;
-        //    int cursorY = Cursor.Position.Y;
-        //    previusForm.mainRichTextBox.AppendText(cursorX.ToString() + ", " + cursorY.ToString());
-
-        //}
     }
 }
