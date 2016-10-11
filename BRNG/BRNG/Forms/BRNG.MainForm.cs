@@ -23,5 +23,12 @@ namespace BRNG
             BRNGForm numberGenerator = new BRNGForm(this);
             numberGenerator.Show();            
         }
+
+        private void lookAtGeneratedNumberButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BRNG.Forms.BRNGKeyForm numberGeneratorByKeys = new Forms.BRNGKeyForm(this);
+            numberGeneratorByKeys.Show();
+        }
     }
 }

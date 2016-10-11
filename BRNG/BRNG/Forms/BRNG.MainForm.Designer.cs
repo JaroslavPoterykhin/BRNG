@@ -86,6 +86,7 @@
             this.lookAtGeneratedNumberButton.TabIndex = 2;
             this.lookAtGeneratedNumberButton.Text = "Look At Numbers";
             this.lookAtGeneratedNumberButton.UseVisualStyleBackColor = true;
+            this.lookAtGeneratedNumberButton.Click += new System.EventHandler(this.lookAtGeneratedNumberButton_Click);
             // 
             // mainRichTextBox
             // 

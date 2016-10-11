@@ -22,12 +22,12 @@ namespace BRNG
         private int counter = 0;
         Engine.RandomPointGeneratorEngine Point;
         Stopwatch entropy;
-        MainForm previosForm;
+        MainForm previousForm;
         public BRNGForm(MainForm form)
         {
             InitializeComponent();
             entropy = new Stopwatch();
-            previosForm = form;
+            previousForm = form;
             Point = new Engine.RandomPointGeneratorEngine();
             entropy.Start();
         }
@@ -35,10 +35,11 @@ namespace BRNG
         private void BRNGPicture_Click(object sender, EventArgs e)
         {
             entropy.Stop();
-                   
+            BRNG.Engine.BRNGEntropyGenerator generator = new Engine.BRNGEntropyGenerator();
             if (counter < 10)
             {
-                previosForm.mainRichTextBox.AppendText(entropy.ElapsedMilliseconds.ToString()+ " ");
+                
+                previousForm.mainRichTextBox.AppendText(generator.Generate(entropy.ElapsedMilliseconds).ToString() + " ");
                 counter++;
                 BRNGPicture.Location = Point.GenerateNewPoint();
                 entropy.Reset();
@@ -47,8 +48,8 @@ namespace BRNG
             else
             {
                 this.Close();
-                
-                previosForm.Show();
+
+                previousForm.Show();
             }
         }
     }

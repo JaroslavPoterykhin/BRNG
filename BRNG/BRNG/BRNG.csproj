@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BRNG</RootNamespace>
     <AssemblyName>BRNG</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +32,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>BRNG.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -60,6 +64,12 @@
     <Compile Include="Forms\BRNG.RNGForm.Designer.cs">
       <DependentUpon>BRNG.RNGForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BRNG.RNGKEYForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BRNG.RNGKEYForm.Designer.cs">
+      <DependentUpon>BRNG.RNGKEYForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\BRNG.MainForm.resx">
@@ -67,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BRNG.RNGForm.resx">
       <DependentUpon>BRNG.RNGForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BRNG.RNGKEYForm.resx">
+      <DependentUpon>BRNG.RNGKEYForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
