@@ -34,6 +34,7 @@ namespace BRNG.Forms
                 keyFormLabel.Text = newChar.GenerateNewChar().ToString();
                 entropy.Reset();
                 entropy.Start();
+                keyFormLabel.Location = newChar.GenerateNewPoint();
             }
                 if (counter >9)
                 {
