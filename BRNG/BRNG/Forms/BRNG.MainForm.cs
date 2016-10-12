@@ -12,8 +12,10 @@ namespace BRNG
 {
     public partial class MainForm : Form
     {
+        string path;
         public MainForm()
         {
+            path = Environment.CurrentDirectory;
             InitializeComponent();
         }
 
@@ -40,7 +42,17 @@ namespace BRNG
 
         private void howToUseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("sd", "sad", MessageBoxButtons.OK ,  MessageBoxIcon.Question);
+            MessageBox.Show("How to use this programme", "How to use this programme", MessageBoxButtons.OK ,  MessageBoxIcon.Question);
+        }
+
+        private void saveNumbersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.IO.File.WriteAllText (path+@"\\randomNumbers.txt" , mainRichTextBox.Text);
+        }
+
+        private void dirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(path);
         }
     }
 }

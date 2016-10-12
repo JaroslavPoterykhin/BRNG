@@ -32,11 +32,13 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fAQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.howToUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newBRNGButton = new System.Windows.Forms.Button();
             this.lookAtGeneratedNumberButton = new System.Windows.Forms.Button();
             this.mainRichTextBox = new System.Windows.Forms.RichTextBox();
             this.ThirdButton = new System.Windows.Forms.Button();
-            this.howToUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveNumbersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,12 +56,16 @@
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveNumbersToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // aboutToolStripMenuItem
             // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dirToolStripMenuItem});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
@@ -71,6 +77,13 @@
             this.fAQToolStripMenuItem.Name = "fAQToolStripMenuItem";
             this.fAQToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.fAQToolStripMenuItem.Text = "F.A.Q";
+            // 
+            // howToUseToolStripMenuItem
+            // 
+            this.howToUseToolStripMenuItem.Name = "howToUseToolStripMenuItem";
+            this.howToUseToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.howToUseToolStripMenuItem.Text = "How to use";
+            this.howToUseToolStripMenuItem.Click += new System.EventHandler(this.howToUseToolStripMenuItem_Click);
             // 
             // newBRNGButton
             // 
@@ -110,12 +123,19 @@
             this.ThirdButton.UseVisualStyleBackColor = true;
             this.ThirdButton.Click += new System.EventHandler(this.ThirdButton_Click);
             // 
-            // howToUseToolStripMenuItem
+            // saveNumbersToolStripMenuItem
             // 
-            this.howToUseToolStripMenuItem.Name = "howToUseToolStripMenuItem";
-            this.howToUseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.howToUseToolStripMenuItem.Text = "How to use";
-            this.howToUseToolStripMenuItem.Click += new System.EventHandler(this.howToUseToolStripMenuItem_Click);
+            this.saveNumbersToolStripMenuItem.Name = "saveNumbersToolStripMenuItem";
+            this.saveNumbersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveNumbersToolStripMenuItem.Text = "Save numbers";
+            this.saveNumbersToolStripMenuItem.Click += new System.EventHandler(this.saveNumbersToolStripMenuItem_Click);
+            // 
+            // dirToolStripMenuItem
+            // 
+            this.dirToolStripMenuItem.Name = "dirToolStripMenuItem";
+            this.dirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dirToolStripMenuItem.Text = "Dir";
+            this.dirToolStripMenuItem.Click += new System.EventHandler(this.dirToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -149,6 +169,8 @@
         public System.Windows.Forms.RichTextBox mainRichTextBox;
         private System.Windows.Forms.Button ThirdButton;
         private System.Windows.Forms.ToolStripMenuItem howToUseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveNumbersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dirToolStripMenuItem;
     }
 }
 
