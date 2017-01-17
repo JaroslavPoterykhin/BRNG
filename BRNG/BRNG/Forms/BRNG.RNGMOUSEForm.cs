@@ -42,5 +42,15 @@ namespace BRNG.Forms
                 previusForm.Show();
             }
         }
+
+        private void BRNGMOUSEForm_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Shift the mouse to generate random numbers." , "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void BRNGMOUSEForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            previusForm.Show();
+        }
     }
 }

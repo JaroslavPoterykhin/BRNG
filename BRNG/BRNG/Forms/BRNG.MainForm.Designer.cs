@@ -28,114 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fAQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.howToUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newBRNGButton = new System.Windows.Forms.Button();
-            this.lookAtGeneratedNumberButton = new System.Windows.Forms.Button();
+            this.generateByButtonsButton = new System.Windows.Forms.Button();
+            this.GenerateByLettersButton = new System.Windows.Forms.Button();
             this.mainRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.ThirdButton = new System.Windows.Forms.Button();
-            this.saveNumbersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.GenerateByMouseButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // generateByButtonsButton
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.aboutToolStripMenuItem,
-            this.fAQToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(409, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.generateByButtonsButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.generateByButtonsButton.Location = new System.Drawing.Point(119, 27);
+            this.generateByButtonsButton.Name = "generateByButtonsButton";
+            this.generateByButtonsButton.Size = new System.Drawing.Size(165, 35);
+            this.generateByButtonsButton.TabIndex = 1;
+            this.generateByButtonsButton.Text = "Generate by Button";
+            this.generateByButtonsButton.UseVisualStyleBackColor = true;
+            this.generateByButtonsButton.Click += new System.EventHandler(this.GenerateByButtonsButton_Click);
             // 
-            // fileToolStripMenuItem
+            // GenerateByLettersButton
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveNumbersToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dirToolStripMenuItem});
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // fAQToolStripMenuItem
-            // 
-            this.fAQToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.howToUseToolStripMenuItem});
-            this.fAQToolStripMenuItem.Name = "fAQToolStripMenuItem";
-            this.fAQToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.fAQToolStripMenuItem.Text = "F.A.Q";
-            // 
-            // howToUseToolStripMenuItem
-            // 
-            this.howToUseToolStripMenuItem.Name = "howToUseToolStripMenuItem";
-            this.howToUseToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.howToUseToolStripMenuItem.Text = "How to use";
-            this.howToUseToolStripMenuItem.Click += new System.EventHandler(this.howToUseToolStripMenuItem_Click);
-            // 
-            // newBRNGButton
-            // 
-            this.newBRNGButton.Location = new System.Drawing.Point(35, 57);
-            this.newBRNGButton.Name = "newBRNGButton";
-            this.newBRNGButton.Size = new System.Drawing.Size(137, 24);
-            this.newBRNGButton.TabIndex = 1;
-            this.newBRNGButton.Text = "Generate by Button";
-            this.newBRNGButton.UseVisualStyleBackColor = true;
-            this.newBRNGButton.Click += new System.EventHandler(this.newBRNGButton_Click);
-            // 
-            // lookAtGeneratedNumberButton
-            // 
-            this.lookAtGeneratedNumberButton.Location = new System.Drawing.Point(242, 57);
-            this.lookAtGeneratedNumberButton.Name = "lookAtGeneratedNumberButton";
-            this.lookAtGeneratedNumberButton.Size = new System.Drawing.Size(137, 25);
-            this.lookAtGeneratedNumberButton.TabIndex = 2;
-            this.lookAtGeneratedNumberButton.Text = "Generate by Letters";
-            this.lookAtGeneratedNumberButton.UseVisualStyleBackColor = true;
-            this.lookAtGeneratedNumberButton.Click += new System.EventHandler(this.lookAtGeneratedNumberButton_Click);
+            this.GenerateByLettersButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GenerateByLettersButton.Location = new System.Drawing.Point(119, 83);
+            this.GenerateByLettersButton.Name = "GenerateByLettersButton";
+            this.GenerateByLettersButton.Size = new System.Drawing.Size(165, 35);
+            this.GenerateByLettersButton.TabIndex = 2;
+            this.GenerateByLettersButton.Text = "Generate by Letters";
+            this.GenerateByLettersButton.UseVisualStyleBackColor = true;
+            this.GenerateByLettersButton.Click += new System.EventHandler(this.GenerateByLettersButton_Click);
             // 
             // mainRichTextBox
             // 
-            this.mainRichTextBox.Location = new System.Drawing.Point(51, 229);
+            this.mainRichTextBox.Location = new System.Drawing.Point(25, 200);
             this.mainRichTextBox.Name = "mainRichTextBox";
-            this.mainRichTextBox.Size = new System.Drawing.Size(328, 197);
+            this.mainRichTextBox.Size = new System.Drawing.Size(372, 226);
             this.mainRichTextBox.TabIndex = 3;
             this.mainRichTextBox.Text = "";
             // 
-            // ThirdButton
+            // GenerateByMouseButton
             // 
-            this.ThirdButton.Location = new System.Drawing.Point(135, 143);
-            this.ThirdButton.Name = "ThirdButton";
-            this.ThirdButton.Size = new System.Drawing.Size(137, 23);
-            this.ThirdButton.TabIndex = 4;
-            this.ThirdButton.Text = "Generate by Mouse";
-            this.ThirdButton.UseVisualStyleBackColor = true;
-            this.ThirdButton.Click += new System.EventHandler(this.ThirdButton_Click);
-            // 
-            // saveNumbersToolStripMenuItem
-            // 
-            this.saveNumbersToolStripMenuItem.Name = "saveNumbersToolStripMenuItem";
-            this.saveNumbersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.saveNumbersToolStripMenuItem.Text = "Save numbers";
-            this.saveNumbersToolStripMenuItem.Click += new System.EventHandler(this.saveNumbersToolStripMenuItem_Click);
-            // 
-            // dirToolStripMenuItem
-            // 
-            this.dirToolStripMenuItem.Name = "dirToolStripMenuItem";
-            this.dirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.dirToolStripMenuItem.Text = "Dir";
-            this.dirToolStripMenuItem.Click += new System.EventHandler(this.dirToolStripMenuItem_Click);
+            this.GenerateByMouseButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GenerateByMouseButton.Location = new System.Drawing.Point(119, 138);
+            this.GenerateByMouseButton.Name = "GenerateByMouseButton";
+            this.GenerateByMouseButton.Size = new System.Drawing.Size(165, 34);
+            this.GenerateByMouseButton.TabIndex = 4;
+            this.GenerateByMouseButton.Text = "Generate by Mouse";
+            this.GenerateByMouseButton.UseVisualStyleBackColor = true;
+            this.GenerateByMouseButton.Click += new System.EventHandler(this.GenerateByMouseButton_Click);
             // 
             // MainForm
             // 
@@ -143,34 +81,26 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(409, 466);
-            this.Controls.Add(this.ThirdButton);
+            this.Controls.Add(this.GenerateByMouseButton);
             this.Controls.Add(this.mainRichTextBox);
-            this.Controls.Add(this.lookAtGeneratedNumberButton);
-            this.Controls.Add(this.newBRNGButton);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.GenerateByLettersButton);
+            this.Controls.Add(this.generateByButtonsButton);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(425, 505);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(425, 505);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BRNG";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fAQToolStripMenuItem;
-        private System.Windows.Forms.Button newBRNGButton;
-        private System.Windows.Forms.Button lookAtGeneratedNumberButton;
+        private System.Windows.Forms.Button generateByButtonsButton;
+        private System.Windows.Forms.Button GenerateByLettersButton;
         public System.Windows.Forms.RichTextBox mainRichTextBox;
-        private System.Windows.Forms.Button ThirdButton;
-        private System.Windows.Forms.ToolStripMenuItem howToUseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveNumbersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dirToolStripMenuItem;
+        private System.Windows.Forms.Button GenerateByMouseButton;
     }
 }
 

@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Engine\BRNGEntropyGenerator.cs" />
     <Compile Include="Engine\BRNGRandomPointGeneratorEngine.cs" />
     <Compile Include="Forms\BRNG.MainForm.cs">
       <SubType>Form</SubType>
@@ -58,11 +57,11 @@
     <Compile Include="Forms\BRNG.MainForm.Designer.cs">
       <DependentUpon>BRNG.MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\BRNG.RNGForm.cs">
+    <Compile Include="Forms\BRNG.RNGBUTTONSForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BRNG.RNGForm.Designer.cs">
-      <DependentUpon>BRNG.RNGForm.cs</DependentUpon>
+    <Compile Include="Forms\BRNG.RNGBUTTONSForm.Designer.cs">
+      <DependentUpon>BRNG.RNGBUTTONSForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\BRNG.RNGKEYForm.cs">
       <SubType>Form</SubType>
@@ -81,8 +80,8 @@
     <EmbeddedResource Include="Forms\BRNG.MainForm.resx">
       <DependentUpon>BRNG.MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BRNG.RNGForm.resx">
-      <DependentUpon>BRNG.RNGForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\BRNG.RNGBUTTONSForm.resx">
+      <DependentUpon>BRNG.RNGBUTTONSForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BRNG.RNGKEYForm.resx">
       <DependentUpon>BRNG.RNGKEYForm.cs</DependentUpon>
@@ -127,6 +126,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cloud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sky.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1479097820162058357.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

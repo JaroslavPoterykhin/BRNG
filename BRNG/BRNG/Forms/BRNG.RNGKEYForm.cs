@@ -13,34 +13,65 @@ namespace BRNG.Forms
     public partial class BRNGKeyForm : Form
     {
         private MainForm previousForm;
-        private int counter = 0;
+        private int lettersCounter = 0;
+        private int errorsCounter = 0;
+        Engine.RandomPointGeneratorEngine newChar;
         System.Diagnostics.Stopwatch entropy;
         public BRNGKeyForm(MainForm _previusForm)
         {
+            newChar = new Engine.RandomPointGeneratorEngine();
             previousForm = _previusForm;
             InitializeComponent();
             entropy = new System.Diagnostics.Stopwatch();
             entropy.Start();
+            lettersLeftLabel.Text = "9";
+            errorsLabel.Text = "0";
         }
 
         private void BRNG_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (keyFormLabel.Text == e.KeyChar.ToString().ToUpper())
             {
-                counter++;
+                lettersCounter++;
+                lettersLeftLabel.Text = (Convert.ToInt32(lettersLeftLabel.Text) - 1).ToString();
                 entropy.Stop();
-                previousForm.mainRichTextBox.AppendText(entropy.ElapsedMilliseconds.ToString() + " "); //don't forget to add entropy generator
-                Engine.RandomPointGeneratorEngine newChar = new Engine.RandomPointGeneratorEngine();
+                previousForm.mainRichTextBox.AppendText(entropy.ElapsedMilliseconds.ToString() + " ");
                 keyFormLabel.Text = newChar.GenerateNewChar().ToString();
                 entropy.Reset();
                 entropy.Start();
-                keyFormLabel.Location = newChar.GenerateNewPoint();
+                keyFormLabel.Location = newChar.GenerateNewPoint(this.Size.Height, this.Size.Width);
             }
-                if (counter >9)
+            else
+            {
+                errorsCounter++;
+                lettersCounter--;
+                if (lettersCounter < 0)
                 {
+                    MessageBox.Show("Too much errors!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    previousForm.mainRichTextBox.Clear();
+                    previousForm.CheckResultOfGeneration(false);
                     previousForm.Show();
                     this.Close();
+                    return;
                 }
+                errorsLabel.Text = errorsCounter.ToString();
+                lettersLeftLabel.Text = (Convert.ToInt32(lettersLeftLabel.Text)).ToString();
+            }
+            if (lettersCounter > 9)
+            {
+                previousForm.Show();
+                this.Close();
+            }
+        }
+
+        private void BRNGKeyForm_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Press letters showed on the screen to generate random numbers .", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void BRNGKeyForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            previousForm.Show();
         }
     }
 }

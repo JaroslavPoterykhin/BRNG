@@ -34,11 +34,11 @@
             // 
             // BRNGPicture
             // 
-            this.BRNGPicture.BackgroundImage = global::BRNG.Properties.Resources.cloud;
-            this.BRNGPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BRNGPicture.Location = new System.Drawing.Point(269, 167);
+            this.BRNGPicture.BackgroundImage = global::BRNG.Properties.Resources.plane;
+            this.BRNGPicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BRNGPicture.Location = new System.Drawing.Point(352, 78);
             this.BRNGPicture.Name = "BRNGPicture";
-            this.BRNGPicture.Size = new System.Drawing.Size(128, 54);
+            this.BRNGPicture.Size = new System.Drawing.Size(88, 84);
             this.BRNGPicture.TabIndex = 0;
             this.BRNGPicture.TabStop = false;
             this.BRNGPicture.Click += new System.EventHandler(this.BRNGPicture_Click);
@@ -47,14 +47,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::BRNG.Properties.Resources.game_background;
-            this.ClientSize = new System.Drawing.Size(656, 504);
+            this.BackgroundImage = global::BRNG.Properties.Resources.sky;
+            this.ClientSize = new System.Drawing.Size(657, 450);
             this.Controls.Add(this.BRNGPicture);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BRNGForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BRNGForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BRNGForm_FormClosed);
+            this.Load += new System.EventHandler(this.BRNGForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BRNGPicture)).EndInit();
             this.ResumeLayout(false);
 

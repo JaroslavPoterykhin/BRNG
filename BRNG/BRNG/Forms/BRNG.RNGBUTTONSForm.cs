@@ -35,13 +35,12 @@ namespace BRNG
         private void BRNGPicture_Click(object sender, EventArgs e)
         {
             entropy.Stop();
-            BRNG.Engine.BRNGEntropyGenerator generator = new Engine.BRNGEntropyGenerator();
+
             if (counter < 10)
             {
-                
-                previousForm.mainRichTextBox.AppendText(generator.Generate(entropy.ElapsedMilliseconds).ToString() + " ");
+                previousForm.mainRichTextBox.AppendText((entropy.ElapsedMilliseconds).ToString() + " ");
                 counter++;
-                BRNGPicture.Location = Point.GenerateNewPoint();
+                BRNGPicture.Location = Point.GenerateNewPoint(this.Size.Height, this.Size.Width);
                 entropy.Reset();
                 entropy.Start();
             }
@@ -50,6 +49,16 @@ namespace BRNG
                 this.Close();
                 previousForm.Show();
             }
+        }
+
+        private void BRNGForm_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Click on picture of plane to generate random numbers .", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void BRNGForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            previousForm.Show();
         }
     }
 }
