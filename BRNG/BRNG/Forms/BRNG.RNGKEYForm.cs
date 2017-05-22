@@ -57,7 +57,7 @@ namespace BRNG.Forms
                 errorsLabel.Text = errorsCounter.ToString();
                 lettersLeftLabel.Text = (Convert.ToInt32(lettersLeftLabel.Text)).ToString();
             }
-            if (lettersCounter > 9)
+            if (lettersCounter > previousForm.lengthOfSeqBox.Value)
             {
                 previousForm.Show();
                 this.Close();
@@ -66,7 +66,7 @@ namespace BRNG.Forms
 
         private void BRNGKeyForm_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Press letters showed on the screen to generate random numbers .", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Нажимайте на клавиатуре клавиши соответстующие показанным на экране.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BRNGKeyForm_FormClosed(object sender, FormClosedEventArgs e)

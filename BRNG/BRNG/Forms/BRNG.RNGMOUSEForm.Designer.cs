@@ -36,7 +36,7 @@
             // BRNGMouseFormProgressBar
             // 
             this.BRNGMouseFormProgressBar.Location = new System.Drawing.Point(29, 531);
-            this.BRNGMouseFormProgressBar.Maximum = 10;
+            this.BRNGMouseFormProgressBar.Maximum = (int)previusForm.lengthOfSeqBox.Value;
             this.BRNGMouseFormProgressBar.Name = "BRNGMouseFormProgressBar";
             this.BRNGMouseFormProgressBar.RightToLeftLayout = true;
             this.BRNGMouseFormProgressBar.Size = new System.Drawing.Size(794, 34);

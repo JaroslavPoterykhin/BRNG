@@ -15,6 +15,7 @@ namespace BRNG.Forms
     {
         private MainForm previusForm;
         private Stopwatch controler;
+        private PictureBox locationOfMause;
         private int counter;
         public BRNGMOUSEForm(MainForm _PreviusForm)
         {
@@ -22,30 +23,50 @@ namespace BRNG.Forms
             InitializeComponent();
             controler = new Stopwatch();
             controler.Start();
+
         }
 
         private void mouseFormPictureBox_MouseMove(object sender, MouseEventArgs e)
         {
-            if (controler.Elapsed.TotalSeconds > 1)
-            {
-                controler.Reset();
-                counter++;
-                int cursorX = Cursor.Position.X;
-                int cursorY = Cursor.Position.Y;
-                previusForm.mainRichTextBox.AppendText((cursorX * cursorY).ToString() + "  ");
-                controler.Start();
-                BRNGMouseFormProgressBar.Value = counter;
-            }
-            if (counter > 9)
+            if (counter >= previusForm.lengthOfSeqBox.Value)
             {
                 this.Close();
                 previusForm.Show();
             }
+            if (controler.Elapsed.TotalSeconds > 1)
+            {
+                controler.Reset();
+                counter++;
+                int cursorX = e.Location.X;
+                int cursorY = e.Location.Y;
+                ShowLocationOnScreen(cursorX, cursorY);
+                previusForm.mainRichTextBox.AppendText((cursorX * cursorY).ToString() + "  ");
+                controler.Start();
+                BRNGMouseFormProgressBar.Value = counter;
+            }
+
+        }
+
+        private void ShowLocationOnScreen(int cursorX, int cursorY)
+        {
+            locationOfMause = new PictureBox();
+            locationOfMause.Location = new Point(
+                cursorX,
+                cursorY
+                );
+            locationOfMause.Size = new System.Drawing.Size(5, 5);
+            locationOfMause.BackColor = Color.Red;
+            locationOfMause.Visible = true;
+            locationOfMause.BringToFront();
+            locationOfMause.Name = "locaton" + cursorX.ToString();
+            locationOfMause.Parent = mouseFormPictureBox;
+            mouseFormPictureBox.SendToBack();
+            this.Controls.Add(locationOfMause);
         }
 
         private void BRNGMOUSEForm_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Shift the mouse to generate random numbers." , "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Для генерации случайных чисел перемещайте курсор мыши над картинкой." , "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BRNGMOUSEForm_FormClosed(object sender, FormClosedEventArgs e)

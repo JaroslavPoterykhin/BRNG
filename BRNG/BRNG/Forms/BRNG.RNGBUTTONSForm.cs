@@ -36,7 +36,7 @@ namespace BRNG
         {
             entropy.Stop();
 
-            if (counter < 10)
+            if (counter < previousForm.lengthOfSeqBox.Value)
             {
                 previousForm.mainRichTextBox.AppendText((entropy.ElapsedMilliseconds).ToString() + " ");
                 counter++;
@@ -53,7 +53,7 @@ namespace BRNG
 
         private void BRNGForm_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Click on picture of plane to generate random numbers .", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Для генерации случайных чисел нажимайте на картинку самолета.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BRNGForm_FormClosed(object sender, FormClosedEventArgs e)

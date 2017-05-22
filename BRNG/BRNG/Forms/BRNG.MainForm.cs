@@ -44,5 +44,6 @@ namespace BRNG
                 MessageBox.Show("Unsuccessful atempt of generation.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
     }
 }
