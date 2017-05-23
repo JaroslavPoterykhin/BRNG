@@ -17,15 +17,18 @@ namespace BRNG.Forms
         private int errorsCounter = 0;
         Engine.RandomPointGeneratorEngine newChar;
         System.Diagnostics.Stopwatch entropy;
+
+
         public BRNGKeyForm(MainForm _previusForm)
         {
             newChar = new Engine.RandomPointGeneratorEngine();
             previousForm = _previusForm;
             InitializeComponent();
+
             entropy = new System.Diagnostics.Stopwatch();
+
             entropy.Start();
-            lettersLeftLabel.Text = "9";
-            errorsLabel.Text = "0";
+
         }
 
         private void BRNG_KeyPress(object sender, KeyPressEventArgs e)
@@ -33,7 +36,6 @@ namespace BRNG.Forms
             if (keyFormLabel.Text == e.KeyChar.ToString().ToUpper())
             {
                 lettersCounter++;
-                lettersLeftLabel.Text = (Convert.ToInt32(lettersLeftLabel.Text) - 1).ToString();
                 entropy.Stop();
                 previousForm.mainRichTextBox.AppendText(entropy.ElapsedMilliseconds.ToString() + " ");
                 keyFormLabel.Text = newChar.GenerateNewChar().ToString();
@@ -47,17 +49,15 @@ namespace BRNG.Forms
                 lettersCounter--;
                 if (lettersCounter < 0)
                 {
-                    MessageBox.Show("Too much errors!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Слишком много ошибочных нажатий, попробуйте еще раз!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     previousForm.mainRichTextBox.Clear();
                     previousForm.CheckResultOfGeneration(false);
                     previousForm.Show();
                     this.Close();
                     return;
                 }
-                errorsLabel.Text = errorsCounter.ToString();
-                lettersLeftLabel.Text = (Convert.ToInt32(lettersLeftLabel.Text)).ToString();
             }
-            if (lettersCounter > previousForm.lengthOfSeqBox.Value)
+            if (lettersCounter >= previousForm.lengthOfSeqBox.Value)
             {
                 previousForm.Show();
                 this.Close();
@@ -67,6 +67,9 @@ namespace BRNG.Forms
         private void BRNGKeyForm_Load(object sender, EventArgs e)
         {
             MessageBox.Show("Нажимайте на клавиатуре клавиши соответстующие показанным на экране.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            BRNGStatistics statistics = new BRNGStatistics((int)previousForm.lengthOfSeqBox.Value);
+            statistics.Show();
+            statistics.Left += 718;
         }
 
         private void BRNGKeyForm_FormClosed(object sender, FormClosedEventArgs e)

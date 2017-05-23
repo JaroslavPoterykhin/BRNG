@@ -75,6 +75,12 @@
     <Compile Include="Forms\BRNG.RNGMOUSEForm.Designer.cs">
       <DependentUpon>BRNG.RNGMOUSEForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BRNG.Statistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BRNG.Statistic.Designer.cs">
+      <DependentUpon>BRNG.Statistic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\BRNG.MainForm.resx">
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BRNG.RNGMOUSEForm.resx">
       <DependentUpon>BRNG.RNGMOUSEForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BRNG.Statistic.resx">
+      <DependentUpon>BRNG.Statistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -135,6 +144,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1479097820162058357.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

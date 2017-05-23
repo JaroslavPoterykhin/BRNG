@@ -21,11 +21,17 @@ namespace BRNG
         {
             this.Hide();
             BRNGForm numberGenerator = new BRNGForm(this);
-            numberGenerator.Show();            
+            numberGenerator.Show();
         }
 
         private void GenerateByLettersButton_Click(object sender, EventArgs e)
         {
+            var culture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
+            var language = InputLanguage.FromCulture(culture);
+            if (InputLanguage.InstalledInputLanguages.IndexOf(language) >= 0)
+            {
+                InputLanguage.CurrentInputLanguage = language;
+            }
             this.Hide();
             BRNG.Forms.BRNGKeyForm numberGeneratorByKeys = new Forms.BRNGKeyForm(this);
             numberGeneratorByKeys.Show();
@@ -41,7 +47,7 @@ namespace BRNG
         {
             if (!result)
             {
-                MessageBox.Show("Unsuccessful atempt of generation.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Неудачная попытка генерации случайных чисел.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
