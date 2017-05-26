@@ -13,11 +13,9 @@ namespace BRNG.Forms
     public partial class BRNGKeyForm : Form
     {
         private MainForm previousForm;
-        private int lettersCounter = 0;
-        private int errorsCounter = 0;
         Engine.RandomPointGeneratorEngine newChar;
         System.Diagnostics.Stopwatch entropy;
-
+        private BRNGStatistics statistics;
 
         public BRNGKeyForm(MainForm _previusForm)
         {
@@ -33,9 +31,9 @@ namespace BRNG.Forms
 
         private void BRNG_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (keyFormLabel.Text == e.KeyChar.ToString().ToUpper())
+            if (string.Equals(keyFormLabel.Text, e.KeyChar.ToString(), StringComparison.OrdinalIgnoreCase))
             {
-                lettersCounter++;
+                statistics.LengthOfSeq = statistics.LengthOfSeq - 1;
                 entropy.Stop();
                 previousForm.mainRichTextBox.AppendText(entropy.ElapsedMilliseconds.ToString() + " ");
                 keyFormLabel.Text = newChar.GenerateNewChar().ToString();
@@ -45,35 +43,43 @@ namespace BRNG.Forms
             }
             else
             {
-                errorsCounter++;
-                lettersCounter--;
-                if (lettersCounter < 0)
+                statistics.ErrorsCounter++;
+                statistics.LengthOfSeq = statistics.LengthOfSeq + 1;
+                if (statistics.ErrorsCounter > 5)
                 {
                     MessageBox.Show("Слишком много ошибочных нажатий, попробуйте еще раз!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     previousForm.mainRichTextBox.Clear();
                     previousForm.CheckResultOfGeneration(false);
                     previousForm.Show();
                     this.Close();
-                    return;
                 }
             }
-            if (lettersCounter >= previousForm.lengthOfSeqBox.Value)
+            if (statistics.LengthOfSeq ==0 )
             {
-                previousForm.Show();
-                this.Close();
+                CustomClose(false);
             }
         }
 
         private void BRNGKeyForm_Load(object sender, EventArgs e)
         {
             MessageBox.Show("Нажимайте на клавиатуре клавиши соответстующие показанным на экране.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            BRNGStatistics statistics = new BRNGStatistics((int)previousForm.lengthOfSeqBox.Value);
+            statistics = new BRNGStatistics((int)previousForm.lengthOfSeqBox.Value);
             statistics.Show();
-            statistics.Left += 718;
+            statistics.Left += this.Size.Width;
         }
 
         private void BRNGKeyForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            CustomClose(true);
+        }
+        private void CustomClose(bool closed)
+        {
+            if (!closed)
+            {
+                this.Close();
+            }
+            statistics.Close();
+            statistics.Dispose();
             previousForm.Show();
         }
     }

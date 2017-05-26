@@ -1,4 +1,5 @@
-﻿namespace BRNG.Forms
+﻿using System;
+namespace BRNG.Forms
 {
     partial class BRNGKeyForm
     {
@@ -28,6 +29,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Random rndLetter = new Random();
+            var charLetter = (char)rndLetter.Next(97,122);
             this.keyFormLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -39,7 +42,7 @@
             this.keyFormLabel.Name = "keyFormLabel";
             this.keyFormLabel.Size = new System.Drawing.Size(56, 61);
             this.keyFormLabel.TabIndex = 0;
-            this.keyFormLabel.Text = "S";
+            this.keyFormLabel.Text = charLetter.ToString().ToUpper();
             // 
             // BRNGKeyForm
             // 

@@ -21,6 +21,7 @@ namespace BRNG.Forms
         {
             previusForm = _PreviusForm;
             InitializeComponent();
+            this.BRNGMouseFormProgressBar.Maximum = (int)previusForm.lengthOfSeqBox.Value;
             controler = new Stopwatch();
             controler.Start();
 
@@ -62,6 +63,7 @@ namespace BRNG.Forms
             locationOfMause.Parent = mouseFormPictureBox;
             mouseFormPictureBox.SendToBack();
             this.Controls.Add(locationOfMause);
+            this.Refresh();
         }
 
         private void BRNGMOUSEForm_Load(object sender, EventArgs e)

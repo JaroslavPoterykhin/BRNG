@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BRNG.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,16 +14,11 @@ namespace BRNG
 {
     public partial class BRNGForm : Form
     {
-        private bool clicked = false;
-        public bool Clicked
-        {
-            get { return clicked; }
-            set { clicked = value; }
-        }
-        private int counter = 0;
         Engine.RandomPointGeneratorEngine Point;
         Stopwatch entropy;
         MainForm previousForm;
+        private BRNGStatistics statistics;
+
         public BRNGForm(MainForm form)
         {
             InitializeComponent();
@@ -35,25 +31,28 @@ namespace BRNG
         private void BRNGPicture_Click(object sender, EventArgs e)
         {
             entropy.Stop();
-
-            if (counter < previousForm.lengthOfSeqBox.Value)
-            {
-                previousForm.mainRichTextBox.AppendText((entropy.ElapsedMilliseconds).ToString() + " ");
-                counter++;
-                BRNGPicture.Location = Point.GenerateNewPoint(this.Size.Height, this.Size.Width);
-                entropy.Reset();
-                entropy.Start();
-            }
-            else
+            previousForm.mainRichTextBox.AppendText((entropy.ElapsedMilliseconds).ToString() + " ");
+            statistics.LengthOfSeq--;
+            BRNGPicture.Location = Point.GenerateNewPoint(this.Size.Height, this.Size.Width);
+            entropy.Reset();
+            entropy.Start();
+            if (statistics.LengthOfSeq == 0)
             {
                 this.Close();
+                statistics.Close();
+                statistics.Dispose();
                 previousForm.Show();
             }
+
+
         }
 
         private void BRNGForm_Load(object sender, EventArgs e)
         {
             MessageBox.Show("Для генерации случайных чисел нажимайте на картинку самолета.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            statistics = new BRNGStatistics((int)previousForm.lengthOfSeqBox.Value);
+            statistics.Show();
+            statistics.Left += this.Size.Width;
         }
 
         private void BRNGForm_FormClosed(object sender, FormClosedEventArgs e)
