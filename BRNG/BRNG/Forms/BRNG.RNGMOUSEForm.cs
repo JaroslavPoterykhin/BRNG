@@ -36,12 +36,16 @@ namespace BRNG.Forms
             }
             if (controler.Elapsed.TotalSeconds > 1)
             {
-                controler.Reset();
+               
                 counter++;
                 int cursorX = e.Location.X;
                 int cursorY = e.Location.Y;
-                ShowLocationOnScreen(cursorX, cursorY);
+                
                 previusForm.mainRichTextBox.AppendText((cursorX * cursorY).ToString() + "  ");
+                
+                
+                ShowLocationOnScreen(cursorX, cursorY);
+                controler.Reset();
                 controler.Start();
                 BRNGMouseFormProgressBar.Value = counter;
             }
@@ -62,8 +66,8 @@ namespace BRNG.Forms
             locationOfMause.Name = "locaton" + cursorX.ToString();
             locationOfMause.Parent = mouseFormPictureBox;
             mouseFormPictureBox.SendToBack();
-            this.Controls.Add(locationOfMause);
-            this.Refresh();
+            mouseFormPictureBox.Controls.Add(locationOfMause);
+            mouseFormPictureBox.Invalidate();
         }
 
         private void BRNGMOUSEForm_Load(object sender, EventArgs e)
