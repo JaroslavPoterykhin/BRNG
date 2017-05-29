@@ -29,18 +29,20 @@ namespace BRNG.Forms
 
         private void mouseFormPictureBox_MouseMove(object sender, MouseEventArgs e)
         {
+
             if (counter >= previusForm.lengthOfSeqBox.Value)
             {
                 this.Close();
                 previusForm.Show();
             }
-            if (controler.Elapsed.TotalSeconds > 1)
+            if (controler.Elapsed.Milliseconds > 700)
             {
                
                 counter++;
+
                 int cursorX = e.Location.X;
                 int cursorY = e.Location.Y;
-                
+                ShowLocationOnScreen(cursorX, cursorY);
                 previusForm.mainRichTextBox.AppendText((cursorX * cursorY).ToString() + "  ");
                 
                 

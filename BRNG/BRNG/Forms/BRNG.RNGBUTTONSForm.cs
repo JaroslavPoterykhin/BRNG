@@ -52,11 +52,13 @@ namespace BRNG
             MessageBox.Show("Для генерации случайных чисел нажимайте на картинку самолета.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             statistics = new BRNGStatistics((int)previousForm.lengthOfSeqBox.Value);
             statistics.Show();
-            statistics.Left += this.Size.Width;
+            statistics.Left += this.Size.Width+statistics.Size.Width;
         }
 
         private void BRNGForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            statistics.Close();
+            statistics.Dispose();
             previousForm.Show();
         }
     }

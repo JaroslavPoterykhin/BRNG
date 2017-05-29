@@ -35,7 +35,7 @@
             // 
             // BRNGMouseFormProgressBar
             // 
-            this.BRNGMouseFormProgressBar.Location = new System.Drawing.Point(29, 531);
+            this.BRNGMouseFormProgressBar.Location = new System.Drawing.Point(28, 511);
             this.BRNGMouseFormProgressBar.Maximum = 10;
             this.BRNGMouseFormProgressBar.Name = "BRNGMouseFormProgressBar";
             this.BRNGMouseFormProgressBar.RightToLeftLayout = true;
@@ -46,9 +46,10 @@
             // mouseFormPictureBox
             // 
             this.mouseFormPictureBox.BackgroundImage = global::BRNG.Properties.Resources._14790978201620583571;
-            this.mouseFormPictureBox.Location = new System.Drawing.Point(29, 12);
+            this.mouseFormPictureBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.mouseFormPictureBox.Location = new System.Drawing.Point(0, 0);
             this.mouseFormPictureBox.Name = "mouseFormPictureBox";
-            this.mouseFormPictureBox.Size = new System.Drawing.Size(794, 497);
+            this.mouseFormPictureBox.Size = new System.Drawing.Size(850, 493);
             this.mouseFormPictureBox.TabIndex = 0;
             this.mouseFormPictureBox.TabStop = false;
             this.mouseFormPictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseFormPictureBox_MouseMove);
@@ -57,7 +58,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 589);
+            this.BackColor = System.Drawing.Color.YellowGreen;
+            this.ClientSize = new System.Drawing.Size(850, 557);
             this.Controls.Add(this.BRNGMouseFormProgressBar);
             this.Controls.Add(this.mouseFormPictureBox);
             this.Name = "BRNGMOUSEForm";

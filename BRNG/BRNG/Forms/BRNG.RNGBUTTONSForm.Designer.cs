@@ -36,9 +36,9 @@
             // 
             this.BRNGPicture.BackgroundImage = global::BRNG.Properties.Resources.plane;
             this.BRNGPicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.BRNGPicture.Location = new System.Drawing.Point(352, 78);
+            this.BRNGPicture.Location = new System.Drawing.Point(245, 212);
             this.BRNGPicture.Name = "BRNGPicture";
-            this.BRNGPicture.Size = new System.Drawing.Size(88, 84);
+            this.BRNGPicture.Size = new System.Drawing.Size(90, 86);
             this.BRNGPicture.TabIndex = 0;
             this.BRNGPicture.TabStop = false;
             this.BRNGPicture.Click += new System.EventHandler(this.BRNGPicture_Click);
