@@ -108,6 +108,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Documentation\VKR.docx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -131,7 +132,6 @@
     <None Include="Resources\146440241974.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Documentation\Kursovaya_Poteryakhin.docx" />
     <None Include="Resources\rand.png" />
   </ItemGroup>
   <ItemGroup>
