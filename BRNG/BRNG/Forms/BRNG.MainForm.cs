@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,5 +52,28 @@ namespace BRNG
             }
         }
 
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(mainRichTextBox.Text))
+            {
+                Stream myStream;
+                SaveFileDialog save = new SaveFileDialog();
+                save.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                save.FileName = "myRandomNumbers.txt";
+                save.FilterIndex = 2;
+                save.RestoreDirectory = true;
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    if ((myStream = save.OpenFile()) != null)
+                    {
+                        using (var writer = new StreamWriter(myStream))
+                        {
+                            writer.Write(mainRichTextBox.Text);
+                        }
+                        myStream.Close();
+                    }
+                }
+            }
+        }
     }
 }

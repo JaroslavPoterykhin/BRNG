@@ -34,6 +34,7 @@
             this.GenerateByMouseButton = new System.Windows.Forms.Button();
             this.lengthOfSeqLabel = new System.Windows.Forms.Label();
             this.lengthOfSeqBox = new System.Windows.Forms.NumericUpDown();
+            this.saveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.lengthOfSeqBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +62,7 @@
             // 
             // mainRichTextBox
             // 
-            this.mainRichTextBox.Location = new System.Drawing.Point(25, 248);
+            this.mainRichTextBox.Location = new System.Drawing.Point(25, 225);
             this.mainRichTextBox.Name = "mainRichTextBox";
             this.mainRichTextBox.Size = new System.Drawing.Size(372, 178);
             this.mainRichTextBox.TabIndex = 3;
@@ -102,12 +103,24 @@
             0,
             0});
             // 
+            // saveButton
+            // 
+            this.saveButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.saveButton.Location = new System.Drawing.Point(133, 421);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(150, 33);
+            this.saveButton.TabIndex = 8;
+            this.saveButton.Text = "Сохранить";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(409, 466);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.lengthOfSeqBox);
             this.Controls.Add(this.lengthOfSeqLabel);
             this.Controls.Add(this.GenerateByMouseButton);
@@ -133,6 +146,7 @@
         private System.Windows.Forms.Button GenerateByMouseButton;
         private System.Windows.Forms.Label lengthOfSeqLabel;
         public System.Windows.Forms.NumericUpDown lengthOfSeqBox;
+        private System.Windows.Forms.Button saveButton;
     }
 }
 
