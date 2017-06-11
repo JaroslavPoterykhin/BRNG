@@ -43,8 +43,6 @@ namespace BRNG
                 statistics.Dispose();
                 previousForm.Show();
             }
-
-
         }
 
         private void BRNGForm_Load(object sender, EventArgs e)

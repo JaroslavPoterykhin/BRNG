@@ -22,11 +22,8 @@ namespace BRNG.Forms
             newChar = new Engine.RandomPointGeneratorEngine();
             previousForm = _previusForm;
             InitializeComponent();
-
             entropy = new System.Diagnostics.Stopwatch();
-
             entropy.Start();
-
         }
 
         private void BRNG_KeyPress(object sender, KeyPressEventArgs e)

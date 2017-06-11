@@ -27,10 +27,9 @@ namespace BRNG.Forms
             this.BRNGMouseFormProgressBar.Maximum = (int)previusForm.lengthOfSeqBox.Value;
             controler = new Stopwatch();
             controler.Start();
-            var pixel = new Bitmap (1, 1);
+            var pixel = new Bitmap(1, 1);
             pixel.SetPixel(0, 0, Color.White);
             saveTrace = new Bitmap(pixel, mouseFormPictureBox.Width, mouseFormPictureBox.Height);
-            
             trace = new List<PictureBox>();
         }
 
@@ -49,20 +48,20 @@ namespace BRNG.Forms
             }
             if (controler.Elapsed.Milliseconds > 500)
             {
-
                 counter++;
-
-
                 ShowLocationOnScreen(cursorX, cursorY, true);
-                previusForm.mainRichTextBox.AppendText((cursorX * cursorY).ToString() + "  ");
-
-
-
+                if ((cursorX + cursorY) % 2 == 0)
+                {
+                    previusForm.mainRichTextBox.AppendText((0).ToString() + " ");
+                }
+                else
+                {
+                    previusForm.mainRichTextBox.AppendText((1).ToString() + " ");
+                }
                 controler.Reset();
                 controler.Start();
                 BRNGMouseFormProgressBar.Value = counter;
             }
-
         }
 
         private void ShowLocationOnScreen(int cursorX, int cursorY, bool show)
@@ -74,7 +73,6 @@ namespace BRNG.Forms
                 );
             locationOfMause.Size = new System.Drawing.Size(5, 5);
             locationOfMause.BackColor = Color.Red;
-
             locationOfMause.Visible = show ? true : false;
             locationOfMause.BringToFront();
             locationOfMause.Name = "locaton" + cursorX.ToString();
@@ -82,9 +80,7 @@ namespace BRNG.Forms
             mouseFormPictureBox.SendToBack();
             mouseFormPictureBox.Controls.Add(locationOfMause);
             mouseFormPictureBox.Invalidate();
-
-            locationOfMause.DrawToBitmap(saveTrace, new Rectangle(new Point(cursorX, cursorY), new Size(5,5)));
-
+            locationOfMause.DrawToBitmap(saveTrace, new Rectangle(new Point(cursorX, cursorY), new Size(5, 5)));
         }
 
         private void BRNGMOUSEForm_Load(object sender, EventArgs e)
