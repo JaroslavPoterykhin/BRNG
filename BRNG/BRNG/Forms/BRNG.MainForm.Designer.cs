@@ -98,7 +98,7 @@
             this.lengthOfSeqBox.Size = new System.Drawing.Size(60, 26);
             this.lengthOfSeqBox.TabIndex = 7;
             this.lengthOfSeqBox.Value = new decimal(new int[] {
-            1,
+            10,
             0,
             0,
             0});
