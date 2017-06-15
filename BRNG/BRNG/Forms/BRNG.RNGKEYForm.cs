@@ -32,7 +32,14 @@ namespace BRNG.Forms
             {
                 statistics.LengthOfSeq = statistics.LengthOfSeq - 1;
                 entropy.Stop();
-                previousForm.mainRichTextBox.AppendText(entropy.ElapsedMilliseconds.ToString() + " ");
+                if (entropy.ElapsedMilliseconds % 2 ==0)
+                {
+                    previousForm.mainRichTextBox.AppendText("0 ");
+                }
+                else
+                {
+                    previousForm.mainRichTextBox.AppendText("1 ");
+                }
                 keyFormLabel.Text = newChar.GenerateNewChar().ToString();
                 entropy.Reset();
                 entropy.Start();

@@ -31,7 +31,15 @@ namespace BRNG
         private void BRNGPicture_Click(object sender, EventArgs e)
         {
             entropy.Stop();
-            previousForm.mainRichTextBox.AppendText((entropy.ElapsedMilliseconds).ToString() + " ");
+            if (entropy.ElapsedMilliseconds % 2 ==0)
+            {
+                previousForm.mainRichTextBox.AppendText("0 ");
+            }
+            else
+            {
+                previousForm.mainRichTextBox.AppendText("1 ");
+            }
+            
             statistics.LengthOfSeq--;
             BRNGPicture.Location = Point.GenerateNewPoint(this.Size.Height, this.Size.Width);
             entropy.Reset();

@@ -96,12 +96,8 @@
             this.lengthOfSeqBox.Location = new System.Drawing.Point(291, 62);
             this.lengthOfSeqBox.Name = "lengthOfSeqBox";
             this.lengthOfSeqBox.Size = new System.Drawing.Size(60, 26);
+            this.lengthOfSeqBox.Value = 10;
             this.lengthOfSeqBox.TabIndex = 7;
-            this.lengthOfSeqBox.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // saveButton
             // 
